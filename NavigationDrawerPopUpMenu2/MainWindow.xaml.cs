@@ -36,5 +36,25 @@ namespace NavigationDrawerPopUpMenu2
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
             ButtonOpenMenu.Visibility = Visibility.Visible;
         }
+
+        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UserControl usc = null;
+            GridMain.Children.Clear();
+
+            switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
+            {
+                case "ItemHome":
+                    usc = new UserControlHome();
+                    GridMain.Children.Add(usc);
+                    break;
+                case "ItemCreate":
+                    usc = new UserControlCreate();
+                    GridMain.Children.Add(usc);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

@@ -29,6 +29,7 @@
         </EventTrigger>
     </Window.Triggers>
     <Grid Background="#FFDEDEDE">
+        <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010"/>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF5C99D6">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
@@ -70,14 +71,14 @@
 
                     <Image Height="80" VerticalAlignment="Bottom"/>
                 </Grid>
-                <ListView Foreground="#FF5C99D6" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                    <ListViewItem Height="60">
+                <ListView x:Name="ListViewMenu" Foreground="#FF5C99D6" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
+                    <ListViewItem x:Name="ItemHome" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ViewDashboard" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Home" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="60">
+                    <ListViewItem x:Name="ItemCreate" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Pencil" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Create" VerticalAlignment="Center" Margin="20 10"/>
